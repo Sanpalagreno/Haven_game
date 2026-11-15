@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://nlm444vxo7ux"]
+
+[ext_resource type="Texture2D" uid="uid://d3bi83ldvmrey" path="res://assets/ship.jpg" id="1_f50pn"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1250665899]
+motion_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=848636879]
+scale = Vector2(0.09927798, 0.102888085)
+texture = ExtResource("1_f50pn")

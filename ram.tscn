@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c27d5gd5u3loa"]
+
+[ext_resource type="Texture2D" uid="uid://beycwgjn7cnew" path="res://assets/charger_boat.png" id="1_26crb"]
+[ext_resource type="Script" uid="uid://bs0srrqgui13h" path="res://ram.gd" id="1_bnm00"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bnm00"]
+radius = 16.0
+height = 94.0
+
+[node name="ram" type="CharacterBody2D" unique_id=542316953]
+motion_mode = 1
+script = ExtResource("1_bnm00")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=261324850]
+rotation = -3.12763
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_26crb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1944803425]
+position = Vector2(0, -3)
+shape = SubResource("CapsuleShape2D_bnm00")

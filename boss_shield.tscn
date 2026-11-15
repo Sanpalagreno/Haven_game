@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://en8gp48cpwd7"]
+
+[ext_resource type="Script" uid="uid://hnmwvi7l2wqt" path="res://boss_shield.gd" id="1_65yw8"]
+[ext_resource type="Texture2D" path="res://assets/shield.png" id="1_f3pts"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65yw8"]
+size = Vector2(149, 32)
+
+[node name="boss_shield" type="CharacterBody2D" unique_id=1328535474]
+script = ExtResource("1_65yw8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2147236654]
+position = Vector2(90, 0)
+rotation = 1.5707964
+scale = Vector2(0.5256, 0.5256)
+texture = ExtResource("1_f3pts")
+offset = Vector2(0, 26)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1306890817]
+position = Vector2(90, 0)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_65yw8")

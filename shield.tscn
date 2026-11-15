@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://5l6emkp4byxn"]
+
+[ext_resource type="Script" uid="uid://da38pfme3lned" path="res://shield.gd" id="1_ffst0"]
+[ext_resource type="Texture2D" path="res://assets/shield.png" id="2_ffst0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68pkx"]
+size = Vector2(149, 33)
+
+[node name="shield" type="CharacterBody2D" unique_id=1233330029]
+script = ExtResource("1_ffst0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=906887492]
+position = Vector2(90, 0)
+rotation = 1.5707964
+scale = Vector2(0.5256, 0.5256)
+texture = ExtResource("2_ffst0")
+offset = Vector2(0, 26)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2010838077]
+position = Vector2(90, 0)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_68pkx")

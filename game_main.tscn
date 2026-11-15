@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://cw3jfymsgkc0p"]
+
+[ext_resource type="Script" uid="uid://b1ieo4bg7t8xu" path="res://game_main.gd" id="1_hyuye"]
+[ext_resource type="PackedScene" uid="uid://el8o6ptd7hog" path="res://player.tscn" id="1_tjf8n"]
+[ext_resource type="PackedScene" uid="uid://5l6emkp4byxn" path="res://shield.tscn" id="3_3ticj"]
+[ext_resource type="Texture2D" uid="uid://b3vi1fiy73bvy" path="res://assets/ocean.png" id="5_ocean"]
+[ext_resource type="Script" uid="uid://mnyo3fhujq4e" path="res://hud.gd" id="6_hud"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_68pkx"]
+b = Vector2(0, 972)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_horiz"]
+b = Vector2(1728, 0)
+
+[node name="game_main" type="Node2D" unique_id=1649176503]
+script = ExtResource("1_hyuye")
+
+[node name="ocean" type="Sprite2D" parent="." unique_id=622927059]
+z_index = -10
+texture = ExtResource("5_ocean")
+centered = false
+
+[node name="player" parent="." unique_id=2129597447 instance=ExtResource("1_tjf8n")]
+position = Vector2(109, 54)
+
+[node name="shield" parent="." unique_id=990494231 instance=ExtResource("3_3ticj")]
+position = Vector2(-21, 12)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=130100148]
+collision_layer = 2
+
+[node name="right_wall" type="CollisionShape2D" parent="StaticBody2D" unique_id=1598357831]
+position = Vector2(1728, 0)
+shape = SubResource("SegmentShape2D_68pkx")
+
+[node name="left_wall" type="CollisionShape2D" parent="StaticBody2D" unique_id=497262108]
+shape = SubResource("SegmentShape2D_68pkx")
+
+[node name="top_wall" type="CollisionShape2D" parent="StaticBody2D" unique_id=278112012]
+shape = SubResource("SegmentShape2D_horiz")
+
+[node name="bot_wall" type="CollisionShape2D" parent="StaticBody2D" unique_id=888087552]
+position = Vector2(0, 972)
+shape = SubResource("SegmentShape2D_horiz")
+
+[node name="hud" type="CanvasLayer" parent="." unique_id=712683939]
+script = ExtResource("6_hud")
+
+[node name="camera" type="Camera2D" parent="." unique_id=1040004111]
+position = Vector2(864, 486)
+zoom = Vector2(0.96, 0.96)

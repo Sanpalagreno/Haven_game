@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://chsio6qptyfcs"]
+
+[ext_resource type="Script" uid="uid://cnml3sujit7va" path="res://cannon.gd" id="1_23j6s"]
+[ext_resource type="Texture2D" uid="uid://ckikvqodeigvh" path="res://assets/Cannon Boat (2).png" id="2_23j6s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_am7si"]
+radius = 35.0
+
+[node name="cannon" type="Area2D" unique_id=1829824511]
+script = ExtResource("1_23j6s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=445275193]
+scale = Vector2(0.045967743, 0.05165336)
+texture = ExtResource("2_23j6s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1684800620]
+shape = SubResource("CircleShape2D_am7si")
